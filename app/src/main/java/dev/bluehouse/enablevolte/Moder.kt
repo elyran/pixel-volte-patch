@@ -411,7 +411,7 @@ class SubscriptionModer(
         get() = this.getIntValue(CarrierConfigManager.KEY_WFC_SPN_FORMAT_IDX_INT)
 
     val carrierName: String
-        get() = this.loadCachedInterface { telephony }.getSubscriptionCarrierName(this.subscriptionId)
+        get() = this.loadCachedInterface { telephony }.getSubscriptionCarrierName(this.subscriptionId) ?: "Unknown Carrier"
 
     val showVoWifiIcon: Boolean
         get() = this.getBooleanValue(CarrierConfigManager.KEY_SHOW_WIFI_CALLING_ICON_IN_STATUS_BAR_BOOL)
